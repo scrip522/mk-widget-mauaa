@@ -8,7 +8,7 @@
 /*
  * https://github.com/scrip522/mk-widget-mauaa
  * バグや要望は、GitHubのイシューで受け付けています！
- * フォークで改善したら、プルリクエストしていただけると嬉しいです！
+ * フォークして改善したら、プルリクエストしていただけると嬉しいです！
 */
 
 let spell = ":_ma::_lu::_a::_wave::blobcat_frustration:" // 魔法の言葉
@@ -17,7 +17,7 @@ let backBtnContainer = Ui:C:container({
     align: 'right',
     children: [
         Ui:C:mfm({
-            text: "$[scale.x=1.5,y=1.5 $[clickable.ev=BACK ⬅️]]",
+            text: "$[scale.x=1.2,y=1.2 $[clickable.ev=BACK ⬅️]]",
             onClickEv: @(id) {
                 if (id == "BACK") {
                     Ui:render(mainContainers)
@@ -72,7 +72,7 @@ let gitHubContainers = [
                 text: "バグや要望は、GitHubのイシューで受け付けています！"
             }),
             Ui:C:text({
-                text: "フォークで改善したら、プルリクエストしていただけると嬉しいです！"
+                text: "フォークして改善したら、プルリクエストしていただけると嬉しいです！"
             })
         ]
     }),
@@ -83,7 +83,7 @@ let btnsContainer = Ui:C:container({
     align: 'right',
     children: [
         Ui:C:mfm({
-            text: "$[scale.x=1.5,y=1.5 $[clickable.ev=INFO ℹ️]]     $[clickable.ev=GITHUB :github:]"
+            text: "$[scale.x=1.2,y=1.2 $[clickable.ev=INFO ℹ️]]   $[scale.x=0.8,y=0.8 $[clickable.ev=GITHUB :github:]]"
             onClickEv: @(id) {
                 if (id == "INFO") {
                     Ui:render(infoContainers)
