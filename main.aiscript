@@ -1,0 +1,117 @@
+// まぅあ～ウィジェット　
+/*
+ * Created by @command_creeper_sub
+ * GNU General Public License v3.0
+ * Ver. 1.0
+*/
+
+/*
+ * https://github.com/scrip522/mk-widget-mauaa
+ * バグや要望は、GitHubのイシューで受け付けています！
+ * フォークで改善したら、プルリクエストしていただけると嬉しいです！
+*/
+
+let spell = ":_ma::_lu::_a::_wave::blobcat_frustration:" // 魔法の言葉
+
+let backBtnContainer = Ui:C:container({
+    align: 'right',
+    children: [
+        Ui:C:mfm({
+            text: "$[scale.x=1.5,y=1.5 $[clickable.ev=BACK ⬅️]]",
+            onClickEv: @(id) {
+                if (id == "BACK") {
+                    Ui:render(mainContainers)
+                }
+            }
+        })
+    ]
+})
+
+let infoContainers = [
+    Ui:C:container({
+        align: 'center',
+        children: [
+            Ui:C:mfm({
+                text: "$[tada.speed=0s **まぅあ～ウィジェット**]"
+            })
+        ]
+    }),
+    Ui:C:container({
+        align: 'left',
+        children: [
+            Ui:C:mfm({
+                text: "作成者: @command_creeper_sub"
+            }),
+            Ui:C:text({
+                text: "ライセンス: GNU General Public License v3.0"
+            }),
+            Ui:C:text({
+                text: "バージョン: 1.0"
+            })
+        ]
+    }),
+    backBtnContainer
+]
+
+let gitHubContainers = [
+    Ui:C:container({
+        align: 'center',
+        children: [
+            Ui:C:mfm({
+                text: "$[tada.speed=0s **まぅあ～ウィジェット**]"
+            })
+        ]
+    })
+    Ui:C:container({
+        align: 'left',
+        children: [
+            Ui:C:mfm({
+                text: "https://github.com/scrip522/mk-widget-mauaa"
+            }),
+            Ui:C:text({
+                text: "バグや要望は、GitHubのイシューで受け付けています！"
+            }),
+            Ui:C:text({
+                text: "フォークで改善したら、プルリクエストしていただけると嬉しいです！"
+            })
+        ]
+    }),
+    backBtnContainer
+]
+
+let btnsContainer = Ui:C:container({
+    align: 'right',
+    children: [
+        Ui:C:mfm({
+            text: "$[scale.x=1.5,y=1.5 $[clickable.ev=INFO ℹ️]]     $[clickable.ev=GITHUB :github:]"
+            onClickEv: @(id) {
+                if (id == "INFO") {
+                    Ui:render(infoContainers)
+                } else if (id == "GITHUB") {
+                    Ui:render(gitHubContainers)
+                }
+            }
+        })
+    ]
+})
+
+let mainContainers = [
+    Ui:C:container({
+        align: 'center'
+        children: [
+            Ui:C:mfm({
+                text: `$[scale.x=0.8,y=0.8 {spell}]`
+            })
+            Ui:C:postFormButton({
+                text: "まぅあ～"
+                primary: true
+                form: {
+                    text: spell
+                }
+            })
+        ]
+    }),
+    btnsContainer
+]
+
+Ui:render(mainContainers)
