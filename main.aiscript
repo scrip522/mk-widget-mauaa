@@ -8,7 +8,7 @@
 /*
  * https://github.com/scrip522/mk-widget-mauaa
  * バグや要望は、GitHubのイシューで受け付けています！
- * フォークして改善したら、プルリクエストしていただけると嬉しいです！
+ * 改善があれば、ぜひこのリポジトリにプルリクエストしてもらえると嬉しいです！
 */
 
 let spell = ":_ma::_lu::_a::_wave::blobcat_frustration:" // 魔法の言葉
@@ -59,12 +59,7 @@ let gitHubContainers = [
         children: [
             Ui:C:mfm({
                 text: "$[tada.speed=0s **まぅあ～ウィジェット**]"
-            })
-        ]
-    })
-    Ui:C:container({
-        align: 'left',
-        children: [
+            }),
             Ui:C:mfm({
                 text: "https://github.com/scrip522/mk-widget-mauaa"
             }),
@@ -72,7 +67,7 @@ let gitHubContainers = [
                 text: "バグや要望は、GitHubのイシューで受け付けています！"
             }),
             Ui:C:text({
-                text: "フォークして改善したら、プルリクエストしていただけると嬉しいです！"
+                text: "改善があれば、ぜひこのリポジトリにプルリクエストしてもらえると嬉しいです！"
             })
         ]
     }),
